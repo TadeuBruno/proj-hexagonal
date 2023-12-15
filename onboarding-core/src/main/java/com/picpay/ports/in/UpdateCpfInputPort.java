@@ -2,5 +2,5 @@ package com.picpay.ports.in;
 
 public interface UpdateCpfInputPort {
 
-    void updateCpf(String cpf, Boolean isValid);
+    void update(String cpf, Boolean isValid);
 }

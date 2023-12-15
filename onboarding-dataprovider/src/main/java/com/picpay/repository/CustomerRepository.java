@@ -9,6 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface CustomerRepository extends MongoRepository<CustomerEntity, String> {
-
     Optional<CustomerEntity> findCustomerByCpf(String cpf);
 }

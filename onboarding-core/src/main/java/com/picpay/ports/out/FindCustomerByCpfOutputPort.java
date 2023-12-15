@@ -5,5 +5,5 @@ import com.picpay.domain.Customer;
 import java.util.Optional;
 
 public interface FindCustomerByCpfOutputPort {
-    Optional<Customer> findCustomerByCpf(String cpf);
+    Optional<Customer> find(String cpf);
 }

@@ -13,7 +13,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class ValidationCpfEvent {
 

@@ -1,6 +1,5 @@
 package com.picpay.ports.out;
 
 public interface SendResultCpfValidationOutputPort {
-
-    void sendCpfResult(String cpf, boolean isValidCPF);
+    void send(String cpf, boolean isValidCPF);
 }

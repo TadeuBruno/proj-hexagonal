@@ -11,13 +11,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UpdateCpfUseCase implements UpdateCpfInputPort {
 
-
     private final UpdateCustomerOutputPort updateCustomerOutputPort;
+
     private final FindCustomerByCpfOutputPort findCustomerByCpfOutputPort;
 
     @Override
-    public void updateCpf(String cpf, Boolean isValid) {
-        var findCustomer = findCustomerByCpfOutputPort.findCustomerByCpf(cpf).orElseThrow(() -> new RuntimeException("Deu erro"));
+    public void update(String cpf, Boolean isValid) {
+        var findCustomer = findCustomerByCpfOutputPort.find(cpf).orElseThrow(() -> new RuntimeException("Deu erro"));
         findCustomer.setIsValidCpf(isValid);
         updateCustomerOutputPort.update(findCustomer);
 

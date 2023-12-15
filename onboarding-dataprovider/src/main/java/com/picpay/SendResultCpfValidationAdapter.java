@@ -14,7 +14,7 @@ public class SendResultCpfValidationAdapter implements SendResultCpfValidationOu
     private final KafkaProducer<ValidationCpfEvent> kafkaProducer;
 
     @Override
-    public void sendCpfResult(String cpf, boolean isValidCPF){
+    public void send(String cpf, boolean isValidCPF){
         var event = ValidationCpfEvent.builder().isValidCpf(isValidCPF).cpf(cpf).build();
         kafkaProducer.publish(event, "sendResultCpf-out-0");
     }

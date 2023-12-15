@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ValidationCpfUseCase implements ValidationCPFInputPort {
 
-
     private final SendResultCpfValidationOutputPort sendResultCpfValidationOutputPort;
+
     @Override
     public void validation(String cpf) {
         boolean isValid =  ValidaCpfUtils.validaCPF(cpf);
-        sendResultCpfValidationOutputPort.sendCpfResult(cpf,isValid);
+        sendResultCpfValidationOutputPort.send(cpf,isValid);
     }
 }
